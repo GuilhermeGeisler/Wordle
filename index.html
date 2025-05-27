@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Cosmic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Audiowide&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <button class="theme-toggle" aria-label="Alterar tema">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </button>
+    
+    <div class="game-container">
+        <header class="game-header">
+            <div class="header-content">
+                <h1 class="game-title">WORDLE<span class="cosmic">COSMIC</span></h1>
+                <div class="info-icon-container">
+                    <div class="info-icon" id="infoIcon">i</div>
+                    <div class="info-box" id="infoBox">
+                        <h3><span class="icon">🛸</span> Como Jogar</h3>
+                        <ul>
+                            <li>Adivinhe a palavra secreta de 5 letras</li>
+                            <li><span class="correct-example">Azul</span>: Letra correta na posição certa</li>
+                            <li><span class="present-example">Roxo</span>: Letra correta na posição errada</li>
+                            <li><span class="absent-example">Cinza</span>: Letra não existe na palavra</li>
+                            <li>Clique no <span class="hint-example">?</span> para receber dicas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="info-overlay" id="infoOverlay"></div>
+        </header>
+
+        <main class="game-board">
+            <div class="target-word" id="targetWord"></div>
+            
+            <div class="attempts-grid" id="attemptsGrid"></div>
+            
+            <div class="input-area">
+                <button class="hint-btn" id="hintBtn">?</button>
+                <input type="text" id="guessInput" maxlength="5" placeholder="Digite seu palpite" autocomplete="off">
+                <button id="submitBtn" class="submit-btn">Enviar</button>
+            </div>
+            
+            <div class="message-area" id="messageArea"></div>
+            
+            <div class="stats-area">
+                <div class="stat-box">
+                    <span class="stat-label">Tentativas</span>
+                    <span class="stat-value" id="attemptsCount">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Dicas</span>
+                    <span class="stat-value" id="hintsCount">3</span>
+                </div>
+                <button id="resetBtn" class="reset-btn">↻ Novo Jogo</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modais -->
+    <div class="game-modal victory-modal" id="victoryModal">
+        <div class="modal-content">
+            <h2>🚀 Missão Cumprida!</h2>
+            <p>Você decifrou o código cósmico!</p>
+            <div class="rocket-container">
+                <div class="rocket">🚀</div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn new-game-btn">Novo Jogo</button>
+                <button class="modal-btn close-btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-modal defeat-modal" id="defeatModal">
+        <div class="modal-content">
+            <h2>💫 Missão Fracassada!</h2>
+            <p>A palavra era: <span id="correctWord"></span></p>
+            <div class="modal-buttons">
+                <button class="modal-btn new-game-btn">Novo Jogo</button>
+                <button class="modal-btn close-btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <footer class="game-footer">
+        <p>Desenvolvido com <span class="heart">♥</span> por Guilherme Geisler | <span id="currentYear"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
