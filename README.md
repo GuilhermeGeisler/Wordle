@@ -61,7 +61,9 @@ wordle-cosmic/
      ```
 
 2. **Execute o Jogo:**  
-   - cd wordle-cosmic && start index.html   
+```bash 
+  cd wordle-cosmic && start index.html
+```   
 
 4. **Mecânicas:**  
    - Digite palavras de 5 letras. 
